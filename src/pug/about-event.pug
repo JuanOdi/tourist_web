@@ -1,0 +1,120 @@
+//- META INFORMATION
+- const page_title = 'WD Traditional (Pug)'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+  const timelineData = [
+        { 
+            ttl: "行事名",
+            date: "〇月●日",
+            dateTtl : "タイトルタイトルタイトル",
+            text: `<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキ </p>`,
+            border:"event-border.png",
+            img:"event_img-01.jpg",
+        },
+         { 
+            ttl: "行事名",
+            date: "〇月●日",
+            dateTtl : "タイトルタイトルタイトル",
+            text: `<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキ </p>`,
+            border:"event-border.png",
+            img:"event_img-02.jpg",
+        }
+        ,
+         { 
+            ttl: "行事名",
+            date: "〇月●日",
+            dateTtl : "タイトルタイトルタイトル",
+            text: `<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキ </p>`,
+            border:"event-border.png",
+            img:"event_img-01.jpg",
+        }
+        ,
+         { 
+            ttl: "行事名",
+            date: "〇月●日",
+            dateTtl : "タイトルタイトルタイトル",
+            text: `<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキ </p>`,
+            border:"event-border.png",
+            img:"event_img-02.jpg",
+        }
+    ];
+
+
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            //- banner
+            .about-event
+                .about-event__bnr.layout-bnr.img
+                    img.img__main(src = `${relativePath}/_assets/images/pages/event/event_bnr.jpg`)
+                    .container
+                        .layout-bnr__ttl
+                            p.layout-bnr__ttl-jp 行事について
+                            .layout-bnr__box-01 
+                            .layout-bnr__box-02
+                        p.layout-bnr__text 地域の皆様にとって心地よい場所づくりを目指しています。<br>どうぞお気軽にお立ち寄りください
+
+            section.about-event.layout-ttl02.container
+              .layout-ttl02__img.img 
+               img.img__main(src = `${relativePath}/_assets/images/common/section_bg.jpg`)
+               .ttl-02__wrap-ttl 
+                h2.ttl-02__ttl 浄光寺の行事
+                h2.ttl-02__ttl-01 四季で見る
+               p.ttl-02__text 浄光寺は長きにわたり、人々の心の触れ合いの場として、平安の心を育んできました。<br>地域に開かれた場所として、季節行事やマルシェなど、多くの方にご利用いただければ幸いです。<br>どなた様もお気軽にお立ち寄りください
+            
+            section.about-event.timeline 
+                .container 
+                    .ttl-03
+                        img.ttl-03__accent-01(src=assetsPath + '/images/common/accent-01.png' alt='')
+                        .ttl-03__ttl-wrap01.relative
+                            .ttl-03__ttl-wrap
+                                img.ttl-03__img(src=assetsPath + '/images/common/ttl_logo-white.png' alt='')
+                                p.ttl-03__en History
+                                p.ttl-03__jp  浄光寺の行事
+                            img.ttl-03__border(src=assetsPath + '/images/common/ttl-border.png' alt='')
+                        img.ttl-03__accent-02(src=assetsPath + '/images/common/accent-02.png' alt='')
+                    ul.timeline__list
+                        each timelineItem in timelineData
+                            li.timeline__item 
+                                .timeline__dot
+                                .timeline__wrap
+                                    .timeline__content
+                                        .timeline__img-wrap
+                                            img.timeline__border(src=assetsPath + '/images/pages/event/'+ timelineItem.border alt='')
+                                            .timeline__img.img 
+                                                img.img__main(src=assetsPath + '/images/pages/event/'+ timelineItem.img alt='')
+                                        p.timeline__item-ttl #{timelineItem.ttl}
+                                        .timeline__text-wrap
+                                            p.timeline__item-date
+                                                span #{timelineItem.date} 
+                                                | #{timelineItem.dateTtl}
+                                            p.timeline__item-text !{timelineItem.text}
+                                              
+            include ./_inc/_blocks/_navigation.pug
+            include ./_inc/_blocks/_location.pug
+            include ./_inc/_blocks/_contact.pug
+            include ./_inc/_blocks/_link.pug
+            
+        include ./_inc/_blocks/_footer.pug
+
+        include ./_inc/_system/_foot.pug

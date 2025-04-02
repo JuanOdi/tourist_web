@@ -1,0 +1,154 @@
+/*********************************
+ Titles
+**********************************/
+@use "../modules" as m;
+
+.ttl-01{
+    @include m.flex($ai: center, $jc: center, $fd:column);
+    &__img{
+        width: 100%;
+        max-width: 50px;
+    }
+    &__en{
+        font-size: 2rem;
+        color:m.$red;
+        font-weight: 500;
+        margin-top: 20px;
+        font-family: m.$font-noto-serif;
+        @include m.mqMax{
+            text-align: center;
+          }
+    }
+    &__jp{
+        writing-mode: vertical-lr;
+        font-family: m.$font-shippori;
+        font-size: 2.8rem;
+        line-height: m.calculate_lh(28,35);
+        font-weight: 600;
+        margin-top: 60px;
+    }
+    &__jp-01{
+        writing-mode: vertical-lr;
+        font-family: m.$font-shippori;
+        font-size: 2.8rem;
+        line-height: m.calculate_lh(28,35);
+        font-weight: 600;
+        margin-top: 100px;
+    }
+    &__jp-wrap{
+        @include m.flex($gap:15px);
+    }
+    &__accent-01,&__accent-02{
+        width: m.percentVal(300,1020);
+    }
+    &__accent-01{
+        align-self: flex-start;
+    }
+    &__accent-02{
+        align-self: flex-end;
+    }
+   
+}
+.ttl-wrap-01{
+    @include m.flex($ai:center, $jc:space-between);
+    margin-bottom: 70px;
+}
+// .ttl-wrap-02{
+  
+// }
+.ttl-02{
+    &__ttl{
+        writing-mode: vertical-lr;
+        font-size: 4.8rem;
+        font-family: m.$font-shippori;
+        font-weight: 600;
+        margin-top: 40px;
+    }
+    &__ttl-01{
+        writing-mode: vertical-lr;
+        font-size: 4.8rem;
+        font-family: m.$font-shippori;
+        font-weight: 600;
+    }
+    &__ttl, &__ttl-01{
+        @include m.mqMax(499px){
+            font-size: 3.8rem
+        }
+    }
+    &__text{
+    text-align: center;
+    font-size:1.6rem;
+    line-height: m.calculate_lh(16,40);
+    margin-block: 100px 80px;
+
+        @include m.mqMax(499px){
+            margin-top:70px;
+            padding-inline:20px;
+        }
+    }
+    &__wrap-ttl{
+        @include m.flex($ai:flex-start, $jc:center);
+        margin-top: 120px;
+
+        @include m.mqMax(499px){
+            margin-top:70px
+        }
+    }
+    
+}
+.ttl-03{
+    @include m.flex($ai: center, $jc: space-between);
+    
+        @include m.mqMax(499px){
+            justify-content: center;
+        }
+  
+    &__img{
+        width: 100%;
+        max-width: 50px;
+    }
+    &__accent-01{
+    align-self: flex-start;
+    }
+    &__accent-02{
+    align-self: flex-end;
+    }
+    &__accent-01,&__accent-02{
+        width: m.percentVal(300,1020);
+
+            @include m.mqMax(499px){
+                display: none;
+            }
+    }
+    &__ttl-wrap{
+        @include m.flex($ai: center, $jc: center, $fd:column);
+        background-color: m.$black02;
+        padding: 30px 15px;
+        color:m.$white;
+        margin-top: 25px;
+    }
+    &__en{
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-top: 20px;
+        font-family: m.$font-noto-serif;
+        line-height: m.calculate_lh(24,40);
+    }
+    &__jp{
+        writing-mode: vertical-lr;
+        font-family: m.$font-shippori;
+        font-size: 2.8rem;
+        line-height: m.calculate_lh(28,35);
+        font-weight: 600;
+        margin-top: 60px;
+    }
+    &__border{
+        position: absolute;
+        top: 0;
+        left:10px;
+        z-index: -1;
+        pointer-events: none;
+        max-width: 130px;
+
+    }
+}

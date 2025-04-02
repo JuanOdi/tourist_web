@@ -1,0 +1,218 @@
+//- META INFORMATION
+- const page_title = 'WD Traditional (Pug)'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+    const facilityData = [
+        { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+        { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        },
+         { 
+           ttlJP:"施設名", 
+           ttlEN:"Shisetsumei",
+           text:"簡単なご説明がここに入ります",
+           img :"modal_img.jpg",
+           address:"―享保 3 年(1718 年)奉納、貴重な五体の如来立像―",
+           modalText:" 五智如来とは、大日如来・薬師如来・阿弥陀如来・阿閦(あしゅく)如来・釈迦如来 の、智恵を体得した五体の尊像で、安産や眼病に霊験あらたかな仏様として多くの人々の信仰を集めてきました。この五智如来立像の製作者は、江戸の鋳物師太田駿河守正儀であり、この種の仏像は例が少なく、昭和 61 年 2 月 26 日に越谷市の文化財として指定されました",
+        }
+      
+    ];
+   
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            //- banner
+            .about-jokoji
+                .about-jokoji__bnr.layout-bnr.img
+                    img.img__main(src = `${relativePath}/_assets/images/pages/jokoji/temple_bnr-img.jpg`)
+                    .layout-bnr__ttl
+                        p.layout-bnr__ttl-jp 浄光寺について
+                        .layout-bnr__box-01 
+                        .layout-bnr__box-02
+                    p.layout-bnr__text.container
+                        | 真言宗豊山派の系譜を継ぐ寺院・浄光寺。本尊に聖観世音菩薩が祀られ、
+                        |「薬師堂」や「五智如来立像」などの文化財が境内に安置されています。
+                        | 地域の斎場としても多くの方にご利用いただいております。
+            
+            //-text-area
+            .about-jokoji__text-area.container
+                p.text-area.text
+                    | 浄光寺の周辺地域は古くから梅の栽培が盛んでした。明治 35 年(1902 年)には古梅
+                    | 園が開園され、多く<br>の花見客でにぎわいました。文人墨客も集まり、俳人の高浜虚子
+                    | も「寒けれど あの一むれも 梅見客」の句を詠んでいます。<br>
+                    | その後、平成 9 年(1997 年)の本堂改築の際に境内は整備され、現在の形となりました。<br>
+                    | 往時の風情をしのばせる梅の花をはじめ、石仏や句碑、浄光観音像、薬師堂、五智如来堂などをお楽しみください。
+            
+            //-Priest
+            section.about-jokoji.priest
+                .container
+                    .priest__bnr
+                        .priest__ttl.ttl-01
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en Chief priest
+                                p.ttl-01__jp  
+                                    | 染谷 
+                                    span 秀忍
+                        .priest__info.fade-right
+                            p.priest__txt 
+                                | 私は僧侶であり、医師でもあります。幼少期に喘息に苦しん
+                                | だことをきっかけに、病を抱える人々の力になりたいと思い 医師を志しました。
+                                | 平成 25 年、第三十世住職である父・染谷秀雄から住職を引継ぎ、現在に至ります。医療も仏道も、人々の苦しみを和らげるお手伝いであることに変わりありません。これからも皆様の健康と幸せに寄り添い、地域に貢献していきたいと考えています。
+                        .priest__img-wrap.fade-left
+                            img.priest__border-01(src = `${relativePath}/_assets/images/pages/jokoji/priest_border.png`)
+                            .priest__img-01.img
+                                img.img__main(src = `${relativePath}/_assets/images/pages/jokoji/priest_img-01.jpg`)
+                    .priest__img-wrap-02
+                        img.priest__border-02(src = `${relativePath}/_assets/images/pages/jokoji/priest_border02.png`)
+                        .priest__img-02.img
+                            img.img__main(src = `${relativePath}/_assets/images/pages/jokoji/priest_img-02.jpg`)
+            
+            //- Guiadance
+            section.about-jokoji.guidance
+                .container 
+                    .ttl-wrap-01
+                        img.ttl-01__accent-01(src=assetsPath + '/images/common/accent-01.png' alt='')
+                        .guidance__ttl.ttl-01
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en Guidance
+                            p.ttl-01__jp  境内ご案内
+                        img.ttl-01__accent-02(src=assetsPath + '/images/common/accent-02.png' alt='')
+                    .guidance__img.img 
+                        img.img__main(src = `${relativePath}/_assets/images/pages/jokoji/guidance_map.jpg`)
+                    .guidance__facility
+                        p.guidance__facility-ttl マップ上の番号がついた名前を押すと、施設の詳細を見ることができます。
+                    ul.guidance__list.list
+                        each facilityItem in facilityData
+                            li.list__item.item
+                                a.item__modal.js-modal(href ="#")
+                                    p.item__ttl #{facilityItem.ttlJP}
+                                    p.item__text #{facilityItem.text}
+                                .item__modal-body.modal-body.container
+                                    .item__modal-content.modal-content 
+                                        .item__modal-close
+                                            .item__modal-icon
+                                            span.item__modal-text-close Close
+                                      
+                                        p.item__modal-ttl-jp #{facilityItem.ttlJP}
+                                        p.item__modal-ttl-en #{facilityItem.ttlEN}
+                                        p.item__modal-address #{facilityItem.address}
+                                        .item__modal-img.img 
+                                            img.img__main(src=assetsPath + '/images/pages/jokoji/' + facilityItem.img alt='')
+                                        p.item__modal-text #{facilityItem.modalText}
+                                        
+            section.about-jokoji.information
+                .container 
+                    .information__wrap-ttl
+                        .information__ttl.ttl-01
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en Information
+                            p.ttl-01__jp  壇家のご案内
+                    .information__content
+                        .information__content-wrap
+                            img.information__border(src=assetsPath + '/images/pages/jokoji/information_border.png' alt='')
+                            .information__img.img
+                                img.img__main(src=assetsPath + '/images/pages/jokoji/information_img.jpg' alt='')
+                            .information__content-info 
+                                p.information__content-text 
+                                    | テキストテキストテキストテキスト <br> テキストテキストテキストテキスト<br> テキストテキストテキストテキスト<br> テキストテキストテキストテキスト<br> テキストテキストテキストテキスト
+                                a.information__content-btn.btn-01(href="#") 
+                                    span.btn-01__line
+                                    p.btn-01__text Read More  
+                   
+
+            include ./_inc/_blocks/_navigation.pug
+            include ./_inc/_blocks/_location.pug
+            include ./_inc/_blocks/_contact.pug
+            include ./_inc/_blocks/_link.pug
+            
+        include ./_inc/_blocks/_footer.pug
+
+        include ./_inc/_system/_foot.pug

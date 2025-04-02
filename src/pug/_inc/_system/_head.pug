@@ -1,0 +1,44 @@
+- const siteTitle = 'WD Traditional (Pug)'
+    if page_title==siteTitle
+        title #{siteTitle}
+    else
+        title #{page_title} | #{siteTitle}
+
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+meta(name="format-detection" content="telephone=no")
+meta(name="viewport", content="width=device-width, user-scalable=1, initial-scale=1, viewport-fit=cover")
+meta(name="keywords" content=`${meta_keywords}`)
+meta(name="description" content=`${meta_description}`)
+meta(property="og:title" content=`${meta_title}`)
+meta(property="og:type" content="website")
+meta(property="og:description" content=`${meta_description}`)
+meta(property="og:url" content=`${meta_og_url}`)
+meta(property="og:image" content=`${assetsPath}/images/_etc/ogp.jpg`)
+meta(property="fb:app_id" content="XXXXXXXXXXXXXXXX")
+meta(name="twitter:card" content="summary")
+meta(name="twitter:site" content="@XXXXX")
+meta(name="twitter:creator" content="@XXXXX")
+meta(name="twitter:image:src" content=`${assetsPath}/images/_etc/ogp.jpg`)
+
+//- FontAwesome
+link(rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" media="all")
+
+//- Google Fonts
+//- link(rel="preconnect" href="https://fonts.googleapis.com")
+//- link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+//- link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap")
+link(rel="preconnect" href="https://fonts.googleapis.com")
+link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+link(href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Shippori+Mincho&family=Noto+Sans+JP:wght@200..900&display=swap" rel="stylesheet")
+
+
+//- CSS
+if isAOS
+    link(rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
+
+if isSwiper
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+
+//- Main CSS file
+link(rel="stylesheet" media="print, screen" href=`${assetsPath}/css/style.css`)

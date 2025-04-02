@@ -1,0 +1,226 @@
+//- META INFORMATION
+- const page_title = 'WD Traditional (Pug)'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+  const pointData = [
+        { 
+            jp:" 駅から 5 分の好立地",
+            img:"point_img-01.jpg" ,
+            border:"point_border.png",
+            text:`<p class="list-point__item-text">いつでも立ち寄りやすい場所で、お墓参りができるのは長い目で見て安心です。北越谷駅から歩いて 5 分、いつでもお気軽にお越しください </p>`
+        },
+        { 
+            jp:"安心の永代供養",
+            img:"point_img-02.jpg" ,
+            border:"point_border.png",
+            text: `<p class="list-point__item-text"> ご遺族様に代わり、ご遺骨とそれにまつわる供養をすべて当院が管理させていた</p>
+                   <p class="list-point__item-text">だきます。墓守できる後継者がいない場合でも将来にわたって安心です。</p>`
+        },
+        { 
+            jp:"美しい敷地と墓所",
+            border:"point_border.png",
+            img:"point_img-03.jpg" ,
+            text: `<p class="list-point__item-text"> 浄光寺は真言宗豊山派の系譜を継ぐ、歴史ある寺院です。</p>
+                   <p class="list-point__item-text"> きれいな敷地と美しい墓所で、ご先祖様にも安心しておくつろぎいただけます。</p>`
+        }
+  ];
+  
+  const graveData = [
+    { 
+      img:"grave_img-01.jpg",
+      ttl:"永大供養" 
+    },
+    { 
+      img:"grave_img-02.jpg",
+      ttl:"樹木葬" 
+    },{ 
+      img:"grave_img-03.jpg",
+      ttl:"境内墓地" 
+    }
+  ];
+
+  const unitData = [
+    { 
+      title: "永大供養",
+      text: `<p>永代供養とは、ご遺族や子孫に代わってお寺が墓地や遺骨を管理・供養することです。</p>
+             <p>遠方でお墓の管理が難しい場合や、後継者がいないときでも安心です。</p>`,
+      amount: "1基 … 00,000円~",
+      tdTtl01:"収骨数",
+      tdPrice01:"〇霊",
+      tdTtl02:"個別収蔵期間",
+      tdPrice02:"〇〇年",
+      tdTtl03:"永代使用料",
+      tdPrice03:"〇〇〇,〇〇〇円~",
+      tdTtl04:"年間管理費",
+      tdPrice04:"〇,〇〇〇円",
+      notes:"※注意事項記載"
+    }, 
+    { 
+      title: "樹木葬",
+      text: `<p>樹木葬は、墓石の代わりに樹木を墓標とするお墓のことをいいます。</p>
+             <p>草花に囲まれ、緑と光のあふれる場所にご遺骨を埋葬させていただきます。</p>`,
+      amount: "1基 … 00,000円~",
+      tdTtl01:"収骨数",
+      tdPrice01:"〇霊",
+      tdTtl02:"個別収蔵期間",
+      tdPrice02:"〇〇年",
+      tdTtl03:"永代使用料",
+      tdPrice03:"〇〇〇,〇〇〇円~",
+      tdTtl04:"年間管理費",
+      tdPrice04:"〇,〇〇〇円",
+      notes:"※注意事項記載"
+    },
+    { 
+      title: "境内墓地",
+      text: `<p>お墓は浄光寺の敷地内で管理されています。墓所は本堂前にあり、ご本尊に見護られています。</p>
+             <p>管理とご供養は、浄光寺住職が執り行います。</p>`,
+      amount: "1基 … 00,000円~",
+      tdTtl01:"収骨数",
+      tdPrice01:"〇霊",
+      tdTtl02:"個別収蔵期間",
+      tdPrice02:"〇〇年",
+      tdTtl03:"永代使用料",
+      tdPrice03:"〇〇〇,〇〇〇円~",
+      tdTtl04:"年間管理費",
+      tdPrice04:"〇,〇〇〇円",
+      notes:"※注意事項記載"
+    },
+    
+    
+  ];
+
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            //- banner
+            .about-memorial
+               .about-memorial__bnr.layout-bnr.img
+                 img.img__main(src = `${relativePath}/_assets/images/pages/memorial/memorial_bnr.jpg`)
+                 .container
+                   .layout-bnr__ttl
+                     p.layout-bnr__ttl-jp 行事について
+                     .layout-bnr__box-01 
+                     .layout-bnr__box-02
+                   p.layout-bnr__text 浄光寺は斎場としてもご利用いただけます。<br>式場は約 50 席、火葬式、家族葬、小規模葬、一般葬が可能です。
+
+            //-Layout-ttl02
+            section.about-event.layout-ttl02.container
+              .layout-ttl02__img.img 
+               img.img__main(src = `${relativePath}/_assets/images/common/section_bg.jpg`)
+               .ttl-02__wrap-ttl 
+                h2.ttl-02__ttl 大 切 な 人 を 想 う 場 所
+                h2.ttl-02__ttl-01 感 謝 の こ こ ろ
+               p.ttl-02__text 亡くなった人の冥福を祈ることを“供養”といいます。<br>親しい故人を慕う心、ご先祖様への感謝の気持ち。<br>想いと想いで繋がるためのひと時を、まごころを込めてお手伝いさせていただきます。
+           
+            //-Img-wrap
+            section.about-memorial 
+             .about-memorial__img-wrap.container
+              img.about-memorial__border(src = `${relativePath}/_assets/images/pages/memorial/memorial_border.png`) 
+              .about-memorial__img.img
+               img.img__main(src = `${relativePath}/_assets/images/pages/memorial/memorial_img.jpg`)
+            
+            //-Point
+            section.about-memorial.point
+             .container
+              .point__ttl-03.ttl-03.relative
+                img.point__accent-01(src=assetsPath + '/images/common/accent-01.png' alt='')
+                .ttl-03__ttl-wrap01.relative
+                    .ttl-03__ttl-wrap
+                        img.ttl-03__img(src=assetsPath + '/images/common/ttl_logo-white.png' alt='')
+                        p.ttl-03__en Point
+                        p.ttl-03__jp  浄光寺の供養
+                    img.ttl-03__border(src=assetsPath + '/images/common/ttl-border.png' alt='')
+                .point__peace
+                    p.point__peace-ttl 浄光寺の供養の「安心」
+                img.point__accent-02(src=assetsPath + '/images/common/accent-02.png' alt='')
+              ul.about-point.list-point
+                each pointItem in pointData
+                  li.list-point__item
+                    .list-point__img-wrap
+                        img.list-point__img-border(src=assetsPath + '/images/pages/memorial/'+ pointItem.border alt='')
+                        .list-point__img.img
+                            img.img__main(src=assetsPath + '/images/pages/memorial/' + pointItem.img alt='')
+                    .list-point__item-wrap
+                        p.list-point__item-ttl-jp #{pointItem.jp}
+                        .list-point__item-con
+                            p.list-point__item-text !{pointItem.text}
+           
+            //-Grave
+            section.about-memorial.grave 
+              .grave__container.img 
+                img.img__main(src=assetsPath + '/images/pages/memorial/grave_bg.jpg' alt='')
+                .container 
+                  .grave__ttl-wrap.ttl-01
+                    img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                    p.ttl-01__en Grave
+                    .grave__jp-wrap.ttl-01__jp-wrap
+                      p.ttl-01__jp-01 種類と費用
+                      p.ttl-01__jp  永 代 供 養 墓 の
+                  ul.grave__list.list 
+                   each graveItem in graveData
+                      li.list__item.item
+                        a.item__link(href="/about-history.html")
+                          .item__img.img 
+                            img.img__main(src=assetsPath + '/images/pages/memorial/' + graveItem.img alt='')
+                            .item__wrap 
+                              p.item__ttl #{graveItem.ttl}
+                              .layout-navigation__box-01 
+                              .layout-navigation__box-02
+                            .item__btn.btn-01(href="") 
+                              span.btn-01__line
+                              p.btn-01__text Read More   
+                            
+                  .grave__unit-con
+                    each unitItem in unitData 
+                      .grave__unit-wrap
+                        h2.grave__unit-ttl #{unitItem.title}
+                        p.grave__unit-text !{unitItem.text}
+                        p.grave__unit-price #{unitItem.price}
+                        table.grave__unit-tb
+                          tr.grave__unit-tr
+                            td.grave__unit-td-ttl #{unitItem.tdTtl01}
+                            td.grave__unit-td-price #{unitItem.tdPrice01}
+                          tr.grave__unit-tr
+                            td.grave__unit-td-ttl #{unitItem.tdTtl02}
+                            td.grave__unit-td-price #{unitItem.tdPrice02}
+                          tr.grave__unit-tr
+                            td.grave__unit-td-ttl #{unitItem.tdTtl03}
+                            td.grave__unit-td-price #{unitItem.tdPrice03}
+                          tr.grave__unit-tr
+                            td.grave__unit-td-ttl #{unitItem.tdTtl04}
+                            td.grave__unit-td-price #{unitItem.tdPrice04}
+                        p.grave__unit-notes #{unitItem.notes}
+                        p.grave__unit-notes #{unitItem.notes}
+
+
+
+
+
+            include ./_inc/_blocks/_contact.pug
+            include ./_inc/_blocks/_navigation.pug
+            include ./_inc/_blocks/_location.pug
+            include ./_inc/_blocks/_link.pug
+            
+        include ./_inc/_blocks/_footer.pug
+
+        include ./_inc/_system/_foot.pug

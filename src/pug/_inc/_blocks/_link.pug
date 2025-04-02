@@ -1,0 +1,18 @@
+-
+  const linkItem = [
+    { img: "layout-link_img-01.jpg" },
+    { img: "layout-link_img-02.jpg" },
+    { img: "layout-link_img-03.jpg" }
+  ]
+
+section.layout-link
+  .layout-link__wrap.container
+    .layout-link__ttl.ttl-01
+      img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+      p.ttl-01__en Link
+      p.ttl-01__jp 関連リンク
+   
+    .layout-link__sponsor
+      each linkData in linkItem
+        a.layout-link__img.img(href ="#")
+          img.img__main(src=assetsPath + '/images/link/' + linkData.img alt='')

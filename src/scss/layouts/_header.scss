@@ -1,0 +1,215 @@
+/*********************************
+ Header
+**********************************/
+@use "../modules" as m;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+  user-select: none;
+  @include m.transition(box-shadow);
+
+  &__wrap{
+    @include m.flex($gap: 50px, $ai: center, $jc: space-between);
+    height: 100px;
+    @include m.mqMax {
+    height: 80px;
+    padding: 0 20px;
+    }
+  
+    .home & {
+      &::before {
+        content: '';
+        display: block;
+        width: 50px;
+        @include m.mqMax(499px) {
+          display: none;
+        }
+      }
+    }
+    
+  }
+  .admin-bar & {
+    top: 32px;
+  }
+
+  .is-scrolled & {
+    background-color: m.$black02;
+  }
+  
+  &__home{
+    @include m.flex($ai: center,$gap:15px);
+    .is-menu-opened & {
+      display: none; 
+    }
+  }
+  &__logo {
+    max-height: 55px;
+    pointer-events: none;
+    @include m.mqMax {
+      max-height: 40px;
+    }
+    .single-post &{
+     filter: brightness(0);
+    }
+
+    &-ttl{
+      font-size: 2.2rem;
+      color: m.$white;
+      font-family: m.$font-noto-serif;
+      font-weight: 700;
+      .single-post &{
+      color:m.$black;
+
+      }
+
+      @include m.mqMax(499px) {
+        font-size: 1.4rem;
+      }
+    }
+
+  }
+
+
+  &__nav {
+    flex: 1;
+    @include m.flex($gap: 50px, $ai: center, $jc: center);
+    // @include m.mqMax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      align-items: flex-start;
+      overflow-y: scroll;
+      background: m.$black01;
+      opacity: 0;
+      visibility: hidden;
+      padding-top: 175px;
+      @include m.transition(opacity, visibility);
+      @include m.mqMax(649px) {
+        gap:10px;
+      }
+
+      &-logo{
+        width: 100%;
+        max-width: 75px;
+        margin-top: -75px;
+        @include m.mqMax(649px) {
+          max-width: 60px;
+        }
+      }
+
+      // .admin-bar & {
+      //   top: calc(100% + 32px);
+      //   height: calc(100vh - (100% - 32px));
+      // }
+      
+      .is-menu-opened & {
+        opacity: .9;
+        visibility: visible;
+      }
+
+  }
+}
+
+/* Menu */
+.header-menu {
+  @include m.flex($gap: 65px, $ai: flex-start, $jc: center);
+ 
+  &__link {
+    writing-mode: vertical-lr;
+    color:m.$white;
+    font-size: 2.4rem;
+    font-weight: 600;
+    @include m.mqMax(649px) {
+      font-size: 1.6rem;
+    }
+
+  }
+  @include m.mqMax(649px) {
+    gap:20px ;
+  }
+}
+
+/* Header Menu Bars */
+.header-bars {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 40px;
+  z-index: 1;
+  cursor: pointer;
+
+  &__icon {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 45px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+  }
+  &__menu-ttl{
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: m.$white;
+    text-transform: uppercase;
+    font-family: m.$font-noto-serif;
+    .single-post &{
+      color:m.$black;
+      }
+  } 
+  &__text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.4rem;
+    color:m.$white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    .is-menu-opened & {
+      opacity: 1;
+    }
+  }
+
+  .is-menu-opened & {
+    &__icon {
+      display: none; // Hide the logo
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background: m.$white;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+

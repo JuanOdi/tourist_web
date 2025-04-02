@@ -1,0 +1,137 @@
+//- META INFORMATION
+- const page_title = 'Jokoji Temple'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+    const newsItem = [
+        {   
+            title:"カテゴリー", 
+            img:"top-news_img.jpg",
+            text:"お知らせタイトルお知らせタイトルお知らせタイトルお知らせタイトル"
+        },
+        {
+            title:"カテゴリー", 
+            img:"top-news_img.jpg",
+            text:"お知らせタイトルお知らせタイトルお知らせタイトルお知らせタイトル"
+            },
+        {
+            title:"カテゴリー", 
+            img:"top-news_img.jpg",
+            text:"お知らせタイトルお知らせタイトルお知らせタイトルお知らせタイトル"
+        },
+    ]
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body.home
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            //- Banner
+            .top-banner
+                .top-banner__bnr.img
+                    img.img__main(src = `${relativePath}/_assets/images/top/top-banner_bnr-img.jpg`)
+                .top-banner__bnr-wrap 
+                    img.top-banner__bnr-logo(src = `${relativePath}/_assets/images/top/top-banner_ttl.png`)
+                    p.top-banner__bnr-ttl Jyo-ko-ji
+                a.top-banner__bnr-scroll(href="#")
+                    p.top-banner__bnr-scroll-txt Scroll
+                    img.top-banner__bnr-scroll-img(src = `${relativePath}/_assets/images/top/top-banner_scroll.png`)
+            
+            //- About
+            section.top-about 
+                .container
+                    .top-about__bnr
+                        .top-about__ttl.ttl-01(data-aos="fade-right")
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en About
+                            .ttl-01__jp-wrap
+                                p.ttl-01__jp-01 心を穏やかに
+                                p.ttl-01__jp  訪れた人々の
+                        .top-about__img-wrap(data-aos="fade-left")
+                            img.top-about__border-01(src = `${relativePath}/_assets/images/top/top-about_border.png`)
+                            img.top-about__img-01(src = `${relativePath}/_assets/images/top/top-about_img-01.jpg`)
+                          
+                    .top-about__content 
+                        .top-about__img-wrap
+                            img.top-about__border-02(src = `${relativePath}/_assets/images/top/top-about_border-02.png`)
+                            img.top-about__img-02(src = `${relativePath}/_assets/images/top/top-about_img-02.jpg`)
+                        .top-about__info 
+                            p.top-about__txt 真言宗浄光寺は、熊野山観音院と号し、大同 2 年(807)創立とされる薬師堂を受け継ぐ古刹(こさつ)です。かつては梅の名所としても知られ、俳人・高浜虚子もこの地を訪れ梅の句を詠んでいます。
+                            a.top-about__btn.btn-01(href="#") 
+                                span.btn-01__line
+                                p.btn-01__text 浄光寺について
+            
+            //-  News
+            section.top-news 
+                .top-news__bg.img 
+                    img.img__main(src=`${assetsPath}/images/common/section_bg.jpg` alt='')
+                    .container
+                        .top-news__ttl.ttl-01
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en News & Topics
+                            p.ttl-01__jp  お知らせ
+                        ul.top-news__link.list-01 
+                            each newsData in newsItem 
+                                li.list-01__item.item-01(data-aos = "fade-up" data-offset = "200")
+                                    .item-01__img.img
+                                        img.img__main(src=assetsPath + '/images/top/' + newsData.img alt='')
+                                    .item-01__wrap
+                                        p.item-01__ttl #{newsData.title}
+                                        p.item-01__text #{newsData.text}
+                                        a.top-news__btn.btn-01(href="#") 
+                                            span.btn-01__line
+                                            p.btn-01__text Read More
+                    a.top-news__btn-02.btn-01(href="#") 
+                        span.btn-01__line
+                        p.btn-01__text Read More   
+           
+            //- Event
+            section.top-event
+                .container 
+                    .top-event__wrap-ttl
+                        img.top-event__accent-01(src=assetsPath + '/images/common/accent-01.png' alt='')
+                        .top-event__ttl.ttl-01
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en Event
+                            p.ttl-01__jp  年間行事
+                        img.top-event__accent-02(src=assetsPath + '/images/common/accent-02.png' alt='')
+                    .top-event__content
+                        .top-event__content-wrap
+                            img.top-event__border(src=assetsPath + '/images/top/top-event_border.png' alt='')
+                            img.top-event__img(src=assetsPath + '/images/top/top-event_img.jpg' alt='')
+                            .top-event__content-info 
+                                p.top-event__content-ttl 浄光寺の行事 <br>四季で見る、
+                                p.top-event__content-text 三百年以上にわたり、北越谷を見守ってきた 浄光寺。<br> これからも四季折々、地域の皆様と ともに時を歩んでまいります。
+                                a.top-event__content-btn.btn-01(href="#") 
+                                    span.btn-01__line
+                                    p.btn-01__text Read More  
+                    .top-event__descrpt 
+                        p.top-event__text-01 寺院をめざして
+                        p.top-event__text-02 地域に愛される
+
+           
+
+            include ./_inc/_blocks/_navigation.pug
+            include ./_inc/_blocks/_location.pug
+            include ./_inc/_blocks/_contact.pug
+            include ./_inc/_blocks/_link.pug
+            
+        include ./_inc/_blocks/_footer.pug
+
+        include ./_inc/_system/_foot.pug

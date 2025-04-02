@@ -1,0 +1,42 @@
+-
+    const headerMenu = [
+        { name: '浄光寺について', href: `${relativePath}/` },
+        { name: '歴史', href: "#" },
+        { name: '行事', href: "#" },
+    ]
+    const headerMenu01 = [
+        { name: '供養', href: "#" },
+        { name: '境内案内', href: "#" },
+        { name: 'お知らせ', href: "#" },
+    ]
+
+
+header.header
+    .container
+        .header__wrap
+            a.header__home.block(href=`${relativePath}/`)
+                img.header__logo(src=`${assetsPath}/images/common/logo.png` alt='')
+                p.header__logo-ttl 真言宗豊山派<br>熊野山観音寺
+            
+            .header__bars.header-bars.js-menu-toggle
+                span.header-bars__icon
+                    img.header__logo(src=`${assetsPath}/images/common/menu_logo.png` alt='')
+                    p.header-bars__menu-ttl Menu
+                span.header-bars__text Close
+               
+
+
+    nav.header__nav
+        if headerMenu.length > 0
+            ul.header__menu.header-menu
+                each item, id in headerMenu
+                    - var strID = String(id + 1).padStart(2, '0')
+                    li.header-menu__item(class=`header-menu__item-${strID}`)
+                        a.header-menu__link(href=`${item.href}`) #{item.name}
+        img.header__nav-logo(src=`${assetsPath}/images/common/header_logo.png` alt='')
+        if headerMenu01.length > 0
+            ul.header__menu.header-menu
+                each item, id in headerMenu01
+                    - var strID = String(id + 1).padStart(2, '0')
+                    li.header-menu__item(class=`header-menu__item-${strID}`)
+                        a.header-menu__link(href=`${item.href}`) #{item.name}

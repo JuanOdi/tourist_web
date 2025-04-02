@@ -1,0 +1,30 @@
+
+
+/*********************************
+ Buttons
+**********************************/
+@use "../modules" as m;
+
+.btn-01 {
+  position: relative;
+  @include m.flex($ai: center, $jc: space-between);
+  max-width: 255px;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  padding: 10px 15px;
+
+  &__line {
+    width: 60px;
+    height: 1px;
+    background-color: m.$red;
+  }
+  @include m.transition(background-color, color);
+
+  &:hover {
+    background-color: m.$black;
+    color: m.$white;
+  }
+}
+.btn-01:hover .btn-01__line {
+  background-color: m.$white;
+}

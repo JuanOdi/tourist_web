@@ -1,0 +1,100 @@
+//- META INFORMATION
+- const page_title = 'WD Traditional (Pug)'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+    const newsItem = [
+        {   
+            title:"カテゴリー", 
+            img:"articles_img.jpg",
+            text:"お知らせタイトルお知らせタイトルお知らせタイトルお知らせタイトル"
+        },
+        {
+            title:"カテゴリー", 
+            img:"articles_img.jpg",
+            text:"お知らせタイトルお知らせタイトルお知らせタイトルお知らせタイトル"
+            },
+        {
+            title:"カテゴリー", 
+            img:"articles_img.jpg",
+            text:"お知らせタイトルお知らせタイトルお知らせタイトルお知らせタイトル"
+        },
+    ]
+  
+
+  
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body.single-post
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            section.news-topics
+                .container 
+                    .ttl-wrap-01
+                        img.ttl-01__accent-01(src=assetsPath + '/images/common/accent-01.png' alt='')
+                        .ttl-01
+                            img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                            p.ttl-01__en News & Topics
+                            p.ttl-01__jp  お知らせ
+                        img.ttl-01__accent-02(src=assetsPath + '/images/common/accent-02.png' alt='')
+            //-Content
+            section.news-topics.content 
+                .container 
+                    .content__ttl-wrap
+                        p.content__date 20〇〇年 〇月 〇日
+                        p.content__ttl-jp  ニュースタイトルがこちらに入ります
+                    .content__img-wrap
+                        img.content__border(src = `${relativePath}/_assets/images/pages/news/news_border.png`) 
+                        .content__img.img
+                            img.img__main(src = `${relativePath}/_assets/images/pages/news/news_img.jpg`) 
+                    .content__descrpt 
+                        p.content-text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        a.content__btn.btn-01(href="#") 
+                            span.btn-01__line
+                            p.btn-01__text 一覧へ戻る
+            
+            section.news-topics.articles
+                .articles__bg.img 
+                    img.img__main(src=`${assetsPath}/images/common/section_bg.jpg` alt='')
+                    .articles__ttl.ttl-01
+                        img.ttl-01__img(src=assetsPath + '/images/common/ttl_logo.png' alt='')
+                        p.ttl-01__en News & Topics
+                        p.ttl-01__jp  お知らせ
+                    .container.articles__con
+                        ul.articles__link.list-01 
+                            each newsData in newsItem 
+                                li.list-01__item.item-01
+                                    .item-01__img.img
+                                        img.img__main(src=assetsPath + '/images/pages/news/' + newsData.img alt='')
+                                    .item-01__wrap
+                                        p.item-01__ttl #{newsData.title}
+                                        p.item-01__text #{newsData.text}
+                        a.articles__btn.btn-01(href="#") 
+                            span.btn-01__line
+                            p.btn-01__text Read More   
+
+            include ./_inc/_blocks/_contact.pug
+            include ./_inc/_blocks/_navigation.pug
+            include ./_inc/_blocks/_location.pug
+            include ./_inc/_blocks/_link.pug
+            
+        include ./_inc/_blocks/_footer.pug
+
+        include ./_inc/_system/_foot.pug

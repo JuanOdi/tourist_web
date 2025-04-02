@@ -1,0 +1,348 @@
+/*********************************
+ Layouts
+**********************************/
+@use "../modules" as m;
+
+// .layout-sample {
+//   &__ttl {
+//     margin: 0 0 30px;
+//   }
+//   &__txt {
+//     p:nth-child(n+2) {
+//       margin: 1.4em 0 0;
+//     }
+//   }
+// }
+
+// Banner
+.layout-bnr {
+  aspect-ratio: 1440/900;
+  &::before{
+    content: "";
+    background-color: m.$black01;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+  }
+  &__ttl{
+    position: absolute;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    @include m.flex($jc:center, $fd:column, $ai:center);
+    width: 100%;
+    max-width: 155px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border: 1px solid m.$white; 
+    padding:45px 20px;
+    text-align: center; 
+    color:m.$black02;
+    &-jp{
+      font-size:3.6rem;
+      font-weight: 600;
+      writing-mode: vertical-lr;
+      letter-spacing: .4em;
+
+        @include m.mqMax(719px){
+          font-size:2.8rem;
+          writing-mode: horizontal-tb;
+        }
+    }
+      @include m.mqMax{
+        top:55%;
+      }
+      @include m.mqMax(719px){
+       max-width: 320px;
+       padding:15px 20px;
+       top:60%;
+      }
+  }
+  &__box-01 {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.7); 
+      border: 1px solid m.$white; 
+      width: 10px;
+      height: 10px;
+    }
+    &::before {
+      top: -12px;
+      left: -12px;
+    }
+    &::after {
+      top: -12px;
+      right: -12px;
+    }
+  }
+  &__box-02 {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.7); 
+      border: 1px solid m.$white; 
+      width: 10px;
+      height: 10px;
+    }
+    &::before {
+      bottom: -12px;
+      left: -12px;
+    }
+    &::after {
+      bottom: -12px;
+      right: -12px;
+    }
+  }
+  &__text{
+    position: absolute;
+    bottom:20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: m.$white;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: m.calculate_lh(24,40);
+    
+      @include m.mqMax{
+        display: none;
+      }
+  }
+}
+
+// Navigation
+.layout-navigation{
+  &__bg{
+    padding:100px 0;
+  }
+  &__wrap{
+    @include m.flex();
+    @include m.mqMax {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap:30px;
+      
+    }
+  }
+  &__link {
+    aspect-ratio: 340/570;
+    width: 340px;
+    &::before{
+      content: "";
+      position: absolute;
+      background-color: m.$black01;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      @include m.transition(opacity);
+    }
+    &:hover::before{
+      opacity: .9;
+    }
+  }
+  &__ttl{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    @include m.flex($jc:center, $fd:column, $ai:center);
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border: 1px solid m.$white; 
+    aspect-ratio: 100/280;   
+    padding:45px 20px;
+    text-align: center; 
+    color:m.$black02;
+    font-family: m.$font-noto-serif;
+    &-jp{
+      font-size:2.8rem;
+      font-weight: 600;
+      writing-mode: vertical-lr;
+    }
+    &-en{
+      font-size:1.4rem;
+      margin-top: 20px
+    }
+    @include m.transition(background-color opacity);
+    &:hover{
+      background-color: m.$black02;
+      opacity: .9;
+    }
+  }
+ 
+  &__box-01 {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.7); 
+      border: 1px solid m.$white; 
+      width: 10px;
+      height: 10px;
+    }
+  
+    &::before {
+      top: -12px;
+      left: -12px;
+    }
+  
+    &::after {
+      top: -12px;
+      right: -12px;
+    }
+  }
+  &__box-02 {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.7); 
+      border: 1px solid m.$white; 
+      width: 10px;
+      height: 10px;
+    }
+  
+    &::before {
+      bottom: -12px;
+      left: -12px;
+    }
+  
+    &::after {
+      bottom: -12px;
+      right: -12px;
+    }
+  }
+  &__link:hover &__ttl {
+    background-color: m.$white;
+  }
+}
+
+// Location
+.layout-location{
+  &__wrap{
+    @include m.flex($ai:center);
+    position: relative;
+    margin-bottom: 100px;
+    @include m.mqMax {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap:30px;
+    }
+  }
+  &__info{
+    position: relative;
+    aspect-ratio: 230/540;
+    width: 230px;
+  }
+  
+  &__img{
+    position: absolute;
+    top:-5px;
+    right: 5px;
+    width: 230px;
+    height: 540px;
+  }
+  &__ttl-content{
+    @include m.flex($ai:center,$fd:column, $jc:center);
+    padding: 70px 30px;
+    position: absolute;
+    top:0;
+    left:0;
+    
+  }
+  &__address{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top:  50px;
+  }
+}
+
+// Contact
+.layout-contact{
+  &__wrap{
+    background-color: m.$red01;
+    text-align: center;
+    padding:145px 0 70px;
+    font-weight: 500;
+    line-height: m.calculate_lh(18,35);
+    margin-top: -60px;
+  }
+  &__ttl{
+    font-size: 1.8rem;
+    @include m.mqMax(459px){
+      font-size: 1.6rem;
+    }
+  }
+  &__tel{
+    font-size:2.8rem ;
+    position: relative;
+    color:m.$red;
+    max-width: 450px;
+    margin: 30px auto 70px;
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width:100%;
+      left: 0;
+      height: 1px;
+      background-color: m.$red;
+    }
+    @include m.mqMax(459px){
+      font-size: 2rem;
+    }
+  }
+  
+  
+  &__btn{
+    position: relative;
+    @include m.flex($ai:center,$jc:space-between);
+    max-width: 255px;
+    margin:0 auto;
+    font-size: 1.8rem;
+    padding:10px 15px;
+    &-line{
+      width: 60px;
+      height: 1px;
+      background-color: m.$red;
+    }
+    @include m.transition(background-color color);
+    &:hover{
+      background-color: m.$black;
+      color: m.$white;
+    }
+  }
+  &__btn:hover &__btn-line {
+    background-color: m.$white;
+  }
+
+}
+
+// Link
+.layout-link{
+
+  &__wrap{
+    @include m.flex($ai:flex-end, $jc:space-between);
+
+  }
+  &__img{
+    aspect-ratio: 280/120;
+    width: 280px;
+  }
+  &__sponsor{
+    @include m.flex($jc:center,$fw:wrap);
+  }
+}
+
+//Con-ttl
+.layout-ttl02{
+  &__img{
+    aspect-ratio: 1020/930;
+    width: 100%;
+    max-width: 1020px;
+  }
+}

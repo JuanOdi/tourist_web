@@ -1,0 +1,115 @@
+//- META INFORMATION
+- const page_title = 'WD Traditional (Pug)'
+- const relativePath = '.'
+- const assetsPath = relativePath + '/_assets'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keywords'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com'
+- const currentPage = 'home'
+
+//- EXTERNAL LIBRARIES
+- const isAOS = true
+- const isSwiper = true
+- const isScrollHint = false
+
+//- CONTENT DATA
+-
+   const historyData = [
+        { 
+            jp:"古梅園",
+            en:"Episode",
+            img:"history_img-01.jpg" ,
+            border:"history_border.png",
+            text:`<p class="list-history__item-text">古梅園は明治３５年３月に開園され、以来、浄光寺 は〝梅の寺〟と呼ばれてきました。浄光寺の周辺は 畑や田んぼばかり。緑豊かな田園風景の中で、浄光寺に咲き乱れる梅の花は多くの花見客に愛されたと言われています。</p>`
+        },
+        { 
+            jp:"本堂および諸堂の完成",
+            en:"Episode",
+            img:"history_img-02.jpg" ,
+            border:"history_border.png",
+            text: `<p class="list-history__item-text"> 平成３年１１月３日、本堂の新築工事の起工式が行 われました。</p>
+                   <p class="list-history__item-text"> 約五年半にわたる建築工事の末、平成 ９年４月２９日、本堂および諸堂の落慶式がめでた く行われました。</p>
+                   <p class="list-history__item-text"> 地域の多くの人々がお祝いに訪れ たと言います。</p>`
+        },
+        { 
+            jp:"浄光観音開眼式",
+            en:"Episode",
+            border:"history_border.png",
+            img:"history_img-03.jpg" ,
+            text: `<p class="list-history__item-text"> 平成１３年４月２０日、浄光寺のシンボルともいえる浄光観音の開眼式が行われました。</p>
+                   <p class="list-history__item-text"> 衆生の声を聞 きその求めに応じて救いの手を差しのべる慈悲深い菩薩として、本尊の聖観世音菩薩像とともに、多く の信仰を集めています。</p>`
+        },
+        { 
+            jp:"記念碑・句碑",
+            en:"Episode",
+            border:"history_border.png",
+            img:"history_img-04.jpg" ,
+            text: `<p class="list-history__item-text"> 平成の都市化の影響で浄光寺周辺は整備され、古梅は伐採するに至りました。それでも、開園当時の記 念碑や、詩人・高浜虚子の句碑は現在においてもその姿形を留め、庭園を訪れた人々の情（こころ）に今昔の歴史を伝えています。</p>`
+        }
+   ];
+
+html(lang="ja")
+    head
+        include ./_inc/_system/_head.pug
+
+    body
+        include ./_inc/_blocks/_header.pug
+
+        main.main
+
+            //- banner
+            .about-history
+                .about-history__bnr.layout-bnr.img
+                    img.img__main(src = `${relativePath}/_assets/images/pages/history/history_bnr.jpg`)
+                    .container
+                        .layout-bnr__ttl
+                            p.layout-bnr__ttl-jp 歴史について
+                            .layout-bnr__box-01 
+                            .layout-bnr__box-02
+                        p.layout-bnr__text 650 年余の歴史をもつ真言宗浄光寺。<br>長き歴史の中で地域の人々の暮らし を見守り、崇敬を集めてきました。
+
+            //-Community
+            section.about-history.layout-con.container
+                .layout-con__img.img 
+                    img.img__main(src = `${relativePath}/_assets/images/common/section_bg.jpg`)
+                    .ttl-02__wrap-ttl
+                        h2.ttl-02__ttl 遥 か な る 願 い を
+                        h2.ttl-02__ttl-01 地 域 の 皆 様 と と も に 、
+                    p.ttl-02__text 真言宗は空海（弘法大師）を開祖とする仏教の宗派のひとつです<br>「即身成仏」を説いたもので、平安時代から現代まで 1200 年 以上続いています。<br>真言宗は高野山を中心に広められ、その後複 数の宗派が生まれました。<br>真言宗豊山派は奈良県の長谷寺を総本 山とし、浄光寺はその系譜を受け継いでいます。
+            
+            //-History
+            section.about-history.history
+                .container 
+                    .history__ttl-03.ttl-03
+                        img.ttl-03__accent-01(src=assetsPath + '/images/common/accent-01.png' alt='')
+                        .ttl-03__ttl-wrap01.relative
+                            .ttl-03__ttl-wrap
+                                img.ttl-03__img(src=assetsPath + '/images/common/ttl_logo-white.png' alt='')
+                                p.ttl-03__en History
+                                p.ttl-03__jp  浄光寺の歴史
+                            img.ttl-03__border(src=assetsPath + '/images/common/ttl-border.png' alt='')
+                        img.ttl-03__accent-02(src=assetsPath + '/images/common/accent-02.png' alt='')
+                    .history__text-wrap 
+                        p.history__text エピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソードエピソ
+                    ul.about-history.list-history
+                        each historyItem in historyData
+                            li.list-history__item
+                                a.list-history__img-wrap(href="")
+                                    img.list-history__img-border(src=assetsPath + '/images/pages/history/'+ historyItem.border alt='')
+                                    .list-history__img.img
+                                        img.img__main(src=assetsPath + '/images/pages/history/' + historyItem.img alt='')
+                                a.list-history__item-wrap(href="")
+                                    p.list-history__item-ttl-jp #{historyItem.jp}
+                                    .list-history__item-con
+                                        p.list-history__item-ttl-en #{historyItem.en}
+                                        p.list-history__item-text !{historyItem.text}
+
+            include ./_inc/_blocks/_navigation.pug
+            include ./_inc/_blocks/_location.pug
+            include ./_inc/_blocks/_contact.pug
+            include ./_inc/_blocks/_link.pug
+            
+        include ./_inc/_blocks/_footer.pug
+
+        include ./_inc/_system/_foot.pug

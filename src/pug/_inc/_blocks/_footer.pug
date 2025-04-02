@@ -1,0 +1,27 @@
+-
+    const footerMenu = [
+        { name: 'TOP', href: `${relativePath}/` },
+        { name: '浄光寺について', href: "#" },
+        { name: '歴史', href: "#" },
+        { name: '行事', href: "#" },
+        { name: '供養', href: "#" },
+        { name: '境内案内', href: "#" },
+        { name: 'お知らせ', href: "#" },
+    ]
+
+footer.footer 
+    .container
+        .footer__wrap
+            a(href=`${relativePath}/`)
+                img.footer__logo(src=`${assetsPath}/images/common/footer_logo.png` alt='WD Traditional')
+                p.footer__txt 〒343-0026
+                p.footer__txt  埼玉県越谷市北越谷4-8-5
+                p.footer__txt  Tel 048-974-4661
+        .footer__menu 
+            if footerMenu.length > 0
+                ul.footer__menu.footer-menu
+                    each item, id in footerMenu
+                        - var strID = String(id + 1).padStart(2, '0')
+                        li.footer-menu__item(class=`footer-menu__item-${strID}`)
+                            a.footer-menu__link(href=`${item.href}`) #{item.name}
+    p.footer__copyright ©︎20xx 会社名 all right reserved.
